@@ -4,8 +4,6 @@ Ecommerce-Follow-Along
 
 Welcome to the **Ecommerce-Follow-Along** project! It's an exciting, mentor-guided journey in which we build a complete e-commerce platform with the MERN stack. Through this process, we will engage in creating scalable APIs, securing authentication, creating database schemas, and setting up the backend in Node.js using Express.
 
-By this point, you are pretty comfortable with React; hence we'll be using that to come up with an interactive and responsive frontend. Throughout the way, we'll integrate all the disparate parts into a fully working full-stack application which is secure to use.
-
 ---
 ##  **Milestone 1: Project Overview**
 ### Why the MERN Stack?   The MERN stack is one of the most popularly used full stacks in web development for the following reasons:
