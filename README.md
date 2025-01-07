@@ -18,7 +18,7 @@ Here's what MERN contains:
 
 ---
 
-### **What I have Build**  
+### **What This Project Builds**  
 
 #### **REST API Structure and Endpoints**  
 APIs (Application Programming Interfaces) let the frontend and backend communicate. We’ll build a REST API that supports:  
