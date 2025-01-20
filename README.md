@@ -126,3 +126,41 @@ In this milestone, I have successfully implemented the following key features fo
 With these features in place, the Sign-Up process is now functional and ready for further enhancements or integration with the backend system. This milestone lays a strong foundation for building a robust user authentication system in the upcoming milestones.
 
 ---
+
+Here’s a polished version of your Milestone 6 description, formatted similarly to the previous milestones:  
+
+---
+
+**Milestone 6 Overview**  
+
+In this milestone, we will focus on enhancing the backend functionality of the signup process. Specifically, we’ll implement a secure endpoint to handle user registration while ensuring sensitive information is protected.  
+
+This involves encrypting user passwords and storing the complete user data in the database with the highest security standards. By the end of this milestone, you will have a robust backend foundation to securely handle user data.  
+
+### Learning Goals   
+
+By completing this milestone, we will:  
+- **Understand Password Encryption**: Learn how to hash and securely store passwords.  
+- **Implement Secure User Data Storage**: Manage user details, ensuring the password is protected during storage.  
+
+### Why Encrypt Passwords?  
+
+- **Protect User Data**: Safeguard passwords in case of database breaches.  
+- **Ensure Privacy**: Prevent unauthorized access to user credentials.  
+- **Achieve Compliance**: Adhere to security regulations like GDPR and PCI-DSS.  
+- **Stop Password Theft**: Make passwords harder to steal or guess.  
+
+### Steps for Milestone 6   
+
+**1. Encrypt Passwords:**  
+- Use **bcrypt** to hash user passwords during signup.  
+- Store the hashed password in the database instead of plain text.  
+
+**2. Store User Data Securely:**  
+- Save user details (e.g., name, email, etc.) while keeping the password encrypted.  
+- Ensure database schema adheres to security best practices.  
+
+By the end of this milestone, we will have a secure backend capable of managing user registrations effectively, setting the stage for building a safe and reliable application.  
+
+---  
+
