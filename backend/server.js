@@ -1,31 +1,36 @@
-const app = require("./app");
-const connectDatabase = require("./db/Database");
 
-process.on("uncaughtException", (err) => {
-  console.error(`Uncaught Exception: ${err.message}`);
-  process.exit(1);
-});
+const userrouter = require('./controller/user');
+const express = require('express');
+const cors = require('cors');
+const multer = require('multer');
+const mongoose = require('mongoose'); // Add Mongoose for MongoDB connection
+const app = express();
+const port = 8000;
 
-if (process.env.NODE_ENV !== "PRODUCTION") {
-    require("dotenv").config({
-        path: "config/.env",
-      });
-      ;
-}
+// Enable CORS if needed (if frontend and backend are on different ports)
+app.use(cors());
 
-// Log environment variables to confirm they are loaded
-console.log('PORT:', process.env.PORT);
-console.log('DB_URL:', process.env.DB_URL);
+// Body parsing middleware for form data
+app.use(express.json());  // For JSON data
+app.use(express.urlencoded({ extended: true }));  // For form-encoded data
+app.use(userrouter); // For
+// File upload setup using multer
+const upload = multer({ dest: 'uploads/' });
 
-connectDatabase();
+// Connect to MongoDB
+const mongoURI = 'mongodb+srv://heramb:inamke@cluster0.wycsh.mongodb.net/test?retryWrites=true&w=majority&tls=true'; // Replace with your MongoDB URI
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("✅Database connection successful"))
+  .catch((err) => console.error("❌Database connection error:", err));
 
-const server = app.listen(process.env.PORT || 8000, () => {
-  console.log(`Server is running on https://localhost:${process.env.PORT || 8000}`);
-});
+// Define the route for user creation
+// app.post('/api/v2/user/create-user', upload.single('file'), (req, res) => {
+//   console.log("Received request with body:", req.body);
+//   console.log("File data:", req.file);
+//   res.status(200).send("User created successfully");
+// });
 
-process.on("unhandledRejection", (err) => {
-  console.error(`Unhandled Rejection: ${err.message}`);
-  server.close(() => {
-    process.exit(1);
-  });
+// Start server
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
