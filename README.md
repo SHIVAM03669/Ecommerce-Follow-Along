@@ -163,6 +163,44 @@ By the end of this milestone, we will have a secure backend capable of managing 
 ---  
 
 
+**Milestone 7 Overview**
+
+In this milestone, we will focus on implementing secure login authentication for users. We’ll learn how to validate user credentials and ensure that passwords are stored securely by comparing encrypted passwords during the login process. By the end of this milestone, you will have a solid foundation for handling user login securely.
+
+**Learning Goals **  
+By the end of this milestone, you will:  
+- Understand how to validate user credentials during login.  
+- Learn how to compare the encrypted password with the user’s input.
+
+**Why Encrypting Passwords?**  
+- **Protect User Data**: Keeps passwords safe even if the database is compromised.  
+- **Privacy**: Ensures passwords aren't stored in plain text.  
+- **Compliance**: Meets security standards like GDPR and PCI-DSS.  
+- **Prevents Password Theft**: Hashed passwords are difficult to decipher, increasing security.
+
+**How Login Authentication Works **  
+- **User Enters Credentials**:  
+  The user provides their email/username and password on the login page.  
+
+- **Fetch User Data from Database**:  
+  The backend retrieves the user record based on the provided email/username. If the user is not found, return an error: "User does not exist."
+
+- **Compare Encrypted Passwords**:  
+  Process the user's input password using the same hashing algorithm (e.g., bcrypt). Compare the resulting hash to the stored hashed password. If they match, the user is authenticated; if not, send an error.
+
+**Steps for Milestone 7 **
+
+1. **Create Login Endpoint**:  
+   - Accept user credentials (email/username and password).  
+   - Retrieve the corresponding user from the database.
+
+2. **Validate Password**:  
+   - Use bcrypt to hash the entered password.  
+   - Compare it with the stored hashed password for authentication.
+
+---
+
+
 
 **Milestone 8 Overview**
 
