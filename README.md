@@ -127,9 +127,7 @@ With these features in place, the Sign-Up process is now functional and ready fo
 
 ---
 
-Here’s a polished version of your Milestone 6 description, formatted similarly to the previous milestones:  
 
----
 
 **Milestone 6 Overview**  
 
@@ -163,4 +161,37 @@ By completing this milestone, we will:
 By the end of this milestone, we will have a secure backend capable of managing user registrations effectively, setting the stage for building a safe and reliable application.  
 
 ---  
+
+
+
+**Milestone 8 Overview**
+
+In this milestone, we will focus on creating a reusable card component that will help display product details effectively on the homepage. By the end of this milestone, you will have learned how to design a dynamic card component that can be used across multiple pages or sections of the app to enhance the user experience.
+
+**Learning Goals **  
+By the end of this milestone, you will:  
+- Learn how to create a card component.  
+- Learn how to display those cards on the products page.
+
+**Why Create Card Components?**  
+- **Showcase Products Effectively**: Presents product details in a clear and visually appealing way.  
+- **Reusable Design**: Can be used across multiple pages or sections of the app.  
+- **Improved User Experience**: Makes it easy for users to browse and interact with products.  
+- **Organized Layout**: Keeps the homepage clean and structured.
+
+**How to Display a Single Card for Multiple Products?**  
+- **Create a Dynamic Component**: Design a single card component that accepts product details as props.  
+- **Use Mapping**: Use array mapping to iterate over the product list and render a card for each product.  
+- **Pass Data Dynamically**: Pass unique product information (e.g., name, price, image) to each card.  
+- **Maintain Consistency**: Ensure the layout remains uniform for all products.
+
+**Steps for Milestone 8 **
+
+1. **Create the Card Component**:
+   - Design a reusable card component with props for product details (e.g., name, image, price).
+   
+2. **Design the Homepage Layout**:  
+   - Set up a grid layout or flexbox for displaying multiple cards neatly.
+
+---
 
