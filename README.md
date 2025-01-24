@@ -1,5 +1,3 @@
-
-
 # Ecommerce-Follow-Along  
 
 
@@ -167,7 +165,7 @@ By the end of this milestone, we will have a secure backend capable of managing 
 
 In this milestone, we will focus on implementing secure login authentication for users. We’ll learn how to validate user credentials and ensure that passwords are stored securely by comparing encrypted passwords during the login process. By the end of this milestone, you will have a solid foundation for handling user login securely.
 
-**Learning Goals **  
+**Learning Goals**  
 By the end of this milestone, you will:  
 - Understand how to validate user credentials during login.  
 - Learn how to compare the encrypted password with the user’s input.
@@ -178,7 +176,7 @@ By the end of this milestone, you will:
 - **Compliance**: Meets security standards like GDPR and PCI-DSS.  
 - **Prevents Password Theft**: Hashed passwords are difficult to decipher, increasing security.
 
-**How Login Authentication Works **  
+**How Login Authentication Works**  
 - **User Enters Credentials**:  
   The user provides their email/username and password on the login page.  
 
@@ -188,7 +186,7 @@ By the end of this milestone, you will:
 - **Compare Encrypted Passwords**:  
   Process the user's input password using the same hashing algorithm (e.g., bcrypt). Compare the resulting hash to the stored hashed password. If they match, the user is authenticated; if not, send an error.
 
-**Steps for Milestone 7 **
+**Steps for Milestone 7**
 
 1. **Create Login Endpoint**:  
    - Accept user credentials (email/username and password).  
@@ -206,7 +204,7 @@ By the end of this milestone, you will:
 
 In this milestone, we will focus on creating a reusable card component that will help display product details effectively on the homepage. By the end of this milestone, you will have learned how to design a dynamic card component that can be used across multiple pages or sections of the app to enhance the user experience.
 
-**Learning Goals **  
+**Learning Goals**  
 By the end of this milestone, you will:  
 - Learn how to create a card component.  
 - Learn how to display those cards on the products page.
@@ -223,7 +221,7 @@ By the end of this milestone, you will:
 - **Pass Data Dynamically**: Pass unique product information (e.g., name, price, image) to each card.  
 - **Maintain Consistency**: Ensure the layout remains uniform for all products.
 
-**Steps for Milestone 8 **
+**Steps for Milestone 8**
 
 1. **Create the Card Component**:
    - Design a reusable card component with props for product details (e.g., name, image, price).
