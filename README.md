@@ -1,5 +1,3 @@
-
-
 # Ecommerce-Follow-Along  
 
 
@@ -127,9 +125,7 @@ With these features in place, the Sign-Up process is now functional and ready fo
 
 ---
 
-Here’s a polished version of your Milestone 6 description, formatted similarly to the previous milestones:  
 
----
 
 **Milestone 6 Overview**  
 
@@ -163,4 +159,75 @@ By completing this milestone, we will:
 By the end of this milestone, we will have a secure backend capable of managing user registrations effectively, setting the stage for building a safe and reliable application.  
 
 ---  
+
+
+**Milestone 7 Overview**
+
+In this milestone, we will focus on implementing secure login authentication for users. We’ll learn how to validate user credentials and ensure that passwords are stored securely by comparing encrypted passwords during the login process. By the end of this milestone, you will have a solid foundation for handling user login securely.
+
+**Learning Goals**  
+By the end of this milestone, you will:  
+- Understand how to validate user credentials during login.  
+- Learn how to compare the encrypted password with the user’s input.
+
+**Why Encrypting Passwords?**  
+- **Protect User Data**: Keeps passwords safe even if the database is compromised.  
+- **Privacy**: Ensures passwords aren't stored in plain text.  
+- **Compliance**: Meets security standards like GDPR and PCI-DSS.  
+- **Prevents Password Theft**: Hashed passwords are difficult to decipher, increasing security.
+
+**How Login Authentication Works**  
+- **User Enters Credentials**:  
+  The user provides their email/username and password on the login page.  
+
+- **Fetch User Data from Database**:  
+  The backend retrieves the user record based on the provided email/username. If the user is not found, return an error: "User does not exist."
+
+- **Compare Encrypted Passwords**:  
+  Process the user's input password using the same hashing algorithm (e.g., bcrypt). Compare the resulting hash to the stored hashed password. If they match, the user is authenticated; if not, send an error.
+
+**Steps for Milestone 7**
+
+1. **Create Login Endpoint**:  
+   - Accept user credentials (email/username and password).  
+   - Retrieve the corresponding user from the database.
+
+2. **Validate Password**:  
+   - Use bcrypt to hash the entered password.  
+   - Compare it with the stored hashed password for authentication.
+
+---
+
+
+
+**Milestone 8 Overview**
+
+In this milestone, we will focus on creating a reusable card component that will help display product details effectively on the homepage. By the end of this milestone, you will have learned how to design a dynamic card component that can be used across multiple pages or sections of the app to enhance the user experience.
+
+**Learning Goals**  
+By the end of this milestone, you will:  
+- Learn how to create a card component.  
+- Learn how to display those cards on the products page.
+
+**Why Create Card Components?**  
+- **Showcase Products Effectively**: Presents product details in a clear and visually appealing way.  
+- **Reusable Design**: Can be used across multiple pages or sections of the app.  
+- **Improved User Experience**: Makes it easy for users to browse and interact with products.  
+- **Organized Layout**: Keeps the homepage clean and structured.
+
+**How to Display a Single Card for Multiple Products?**  
+- **Create a Dynamic Component**: Design a single card component that accepts product details as props.  
+- **Use Mapping**: Use array mapping to iterate over the product list and render a card for each product.  
+- **Pass Data Dynamically**: Pass unique product information (e.g., name, price, image) to each card.  
+- **Maintain Consistency**: Ensure the layout remains uniform for all products.
+
+**Steps for Milestone 8**
+
+1. **Create the Card Component**:
+   - Design a reusable card component with props for product details (e.g., name, image, price).
+   
+2. **Design the Homepage Layout**:  
+   - Set up a grid layout or flexbox for displaying multiple cards neatly.
+
+---
 
