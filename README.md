@@ -231,3 +231,61 @@ By the end of this milestone, you will:
 
 ---
 
+
+**Milestone 9 Overview**
+
+In this milestone, we will create a frontend **Product Input Form** that allows users to submit detailed product information, including multiple images. By the end of this milestone, you'll understand how to design and implement a form that can handle structured product data effectively.
+
+---
+
+## **Learning Goals**
+
+By the end of this milestone, you will:  
+- Learn how to create a form that collects all product details.  
+- Understand how to accept multiple images as input.  
+
+---
+
+## **Why Create a Product Input Form?**
+
+1. **Collect Comprehensive Product Data:** Gather all necessary details, such as product name, price, description, and images.  
+2. **Save Data to the Database:** Ensure the input is stored for display on the product homepage.  
+3. **Extend Functionality:** Lay the foundation for additional features, such as admin access or user roles, to control who can upload products.  
+
+---
+
+## **How Does the Product Form Work?**
+
+1. **Input Fields:**  
+   - Add text fields for product name, description, price, and category.  
+   - Include an image upload field to handle multiple images.  
+
+2. **Data Validation:**  
+   - Validate the form inputs to ensure accurate and complete data.  
+
+3. **Submit and Save:**  
+   - On submission, the data will be saved to the database.  
+
+4. **Integration with Homepage:**  
+   - The submitted product details will appear on the product homepage we created in the previous milestone.  
+
+---
+
+## **Steps for Milestone 9**
+
+### **1. Create the Product Input Form**  
+   - Design a form with fields for:  
+     - Product Name  
+     - Product Description  
+     - Product Price  
+     - Product Category  
+     - Multiple Image Upload  
+
+### **2. Handle Image Input**  
+   - Enable the form to accept and preview multiple images before submission.  
+
+### **3. Optional Features (Experiment & Expand)**  
+   - **Admin Access:** Restrict form access so only admins can upload products.  
+   - **Shop Profiles:** Allow only users with shop profiles to add products.  
+
+---
