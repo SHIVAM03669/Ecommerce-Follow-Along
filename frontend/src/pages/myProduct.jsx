@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../components/Products';
 
-export default function Home() {
+export default function MyProducts() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const email = "coco@gmail.com"; 
     useEffect(() => {
-        fetch('http://localhost:8000/api/v2/product/get-products')
+        fetch(`http://localhost:8000/api/v2/product/my-products?email=${email}`)
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`Network response was not ok: ${res.status}`);
