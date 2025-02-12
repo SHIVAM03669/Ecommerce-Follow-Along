@@ -289,3 +289,166 @@ By the end of this milestone, you will:
    - **Shop Profiles:** Allow only users with shop profiles to add products.  
 
 ---
+
+
+## Milestone 10 Overview  
+
+In this milestone, we will create a **Mongoose schema for products** and build an **API endpoint** to store product details in MongoDB. By the end, you’ll understand how to define and validate product data efficiently.  
+
+### Learning Goals   
+By the end of this milestone, you will:  
+ Learn how to write a **product schema** using Mongoose.  
+ Create an **API endpoint** to validate and store product details in MongoDB.  
+
+### Why Create a Product Schema?  
+A well-defined schema ensures **structured and consistent** product data storage, including:  
+- **Product Name**  
+- **Description**  
+- **Price**  
+- **Image URL**  
+- **Other attributes as needed**  
+
+### Why Validation Matters?  
+Validation helps:  
+- **Maintain data integrity** by enforcing required fields and correct data types.  
+- **Prevent errors** by ensuring only valid data is saved in the database.  
+
+### How Does the Product API Work?  
+#### 1️ Define the Product Schema  
+- Structure product data with necessary fields.  
+- Apply validation (e.g., required fields, correct data types).  
+
+#### 2️ Build the API Endpoint  
+- Create a **POST** route to accept product details.  
+- Validate incoming data before saving it to MongoDB.  
+
+#### 3️ Save and Manage Products  
+- Store validated product details in the database.  
+- Extend functionality with optional features like admin control.  
+
+### Optional Features (Experiment & Expand)  
+🔹 **Admin Access**: Restrict product uploads to admins only.  
+🔹 **Shop Profiles**: Allow only users with a shop profile to add products.  
+
+This milestone lays the foundation for handling product data efficiently , and you are encouraged to expand by adding authentication, authorization, and more!.
+---
+
+## Milestone 11 Overview  
+
+In this milestone, we will make our **home page dynamic** by displaying all the products stored in MongoDB. We'll create an **API endpoint** to fetch product data and render it dynamically on the frontend using the previously created **Product Card** component.  
+
+### Learning Goals   
+By the end of this milestone, you will:  
+ Learn how to **write an API endpoint** to extract and send product data from MongoDB.  
+ Understand how to **fetch data on the frontend** and display it dynamically.  
+ Use the **Product Card component** to render product details dynamically.  
+
+### Steps for Milestone 11 📝  
+
+#### 1️ Create a Backend Endpoint  
+- Write an API endpoint that retrieves all stored products from MongoDB.  
+- Send the data to the frontend in JSON format.  
+
+#### 2️ Fetch Data in the Frontend  
+- Implement a function to call the API and retrieve product details.  
+- Handle the API response and store the product data.  
+
+#### 3️ Display Products Dynamically  
+- Pass the fetched data to the **Product Card** component.  
+- Render each product dynamically on the homepage.  
+
+### Why This Matters?  
+This milestone helps you understand **how to send and receive data** between the backend and frontend while ensuring a smooth, dynamic user experience.  
+
+
+This milestone sets the foundation for **building a fully functional product listing page**—get ready to bring your products to life!
+
+---
+## Milestone 12 Overview  
+
+In this milestone, we will create a **My Products page** that displays only the products **added by the logged-in user** based on their email. We'll build an **API endpoint** to filter products by email and render them dynamically on the frontend using the **Product Card** component.  
+
+### Learning Goals   
+By the end of this milestone, you will:  
+ Learn how to **write an API endpoint** that filters products by the user’s email.  
+ Understand how to **fetch and display user-specific products** on the frontend.  
+ Use the **Product Card component** to dynamically render filtered products.  
+
+### Steps for Milestone 12   
+
+#### 1️ Create a Backend Endpoint  
+- Write an API endpoint that **retrieves only the products added by the logged-in user**.  
+- Filter products based on the **user’s email** stored in MongoDB.  
+
+#### 2️ Fetch Data in the Frontend  
+- Implement a function to **call the API** and retrieve **only the logged-in user’s products**.  
+- Handle the response and store the filtered data.  
+
+#### 3️ Display Products Dynamically  
+- Pass the fetched data to the **Product Card** component.  
+- Render only the **user’s products** dynamically on the **My Products page**.  
+
+### Why This Matters?  
+This milestone teaches you **how to filter data based on specific constraints** and send only relevant information to the client, improving efficiency and user experience.  
+
+Now, it's time to **build a personalized product page!**
+
+---
+
+## Milestone 13 Overview  
+
+In this milestone, we will **add functionality to edit uploaded products**. We'll implement an **Edit button** on the Product Card and create a **backend endpoint** to update product details in MongoDB.  
+
+### Learning Goals   
+By the end of this milestone, you will:  
+ Learn how to **write an API endpoint** to update existing product data in MongoDB.  
+ Understand how to **auto-fill a form with existing product details** for editing.  
+ Enable users to **modify and save changes** to their uploaded products.  
+
+### Steps for Milestone 13 📝  
+
+#### 1️ Create a Backend Update Endpoint  
+- Write an API endpoint that **receives updated product data**.  
+- Find the existing product in MongoDB and **update its details**.  
+
+#### 2️ Add an Edit Button in the Frontend  
+- Display an **Edit** button on each **Product Card**.  
+- When clicked, send the **product data to the form**.  
+
+#### 3️ Auto-Fill the Form & Allow Edits  
+- Populate the form with the **existing product details**.  
+- Allow users to **modify the fields** and submit the changes.  
+
+### Why This Matters?  
+This milestone helps you understand **how to perform update operations** efficiently, ensuring users can modify their products without re-uploading everything.  
+
+Now, let’s **bring editing functionality to life!**
+
+---
+
+## Milestone 14 Overview  
+
+In this milestone, we will **add a Delete button** to remove products from the database. We'll create a **backend endpoint** that deletes a product using its **unique ID** in MongoDB.  
+
+### Learning Goals   
+By the end of this milestone, you will:  
+ Learn how to **write an API endpoint** to delete a product by its ID.  
+ Understand how to **trigger the delete operation** from the frontend.  
+
+### Steps for Milestone 14 📝  
+
+#### 1️ Create a Backend Delete Endpoint  
+- Write an API endpoint that **deletes a product from MongoDB** using its unique ID.  
+
+#### 2️ Add a Delete Button in the Frontend  
+- Display a **Delete button** on each **Product Card**.  
+- When clicked, send the **product ID to the backend**.  
+
+#### 3️ Handle the Deletion Process  
+- Ensure the product is **removed from MongoDB**.  
+- Update the UI to **reflect the changes dynamically**.  
+
+### Why This Matters?  
+This milestone teaches you **how to perform delete operations** in MongoDB, ensuring users can remove unwanted products efficiently.  
+
+Now, let's implement **the delete functionality!**
