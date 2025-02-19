@@ -452,3 +452,66 @@ By the end of this milestone, you will:
 This milestone teaches you **how to perform delete operations** in MongoDB, ensuring users can remove unwanted products efficiently.  
 
 Now, let's implement **the delete functionality!**
+
+---
+## Milestone 15 Overview  
+
+In this milestone, we will **create a Navbar component** and integrate it across all pages to enable smooth navigation. The Navbar will include links to key sections of the application and be fully responsive.  
+
+### Learning Goals 🎯  
+By the end of this milestone, you will:  
+✅ Learn how to **create a reusable Navbar component**.  
+✅ Understand how to **use the Navbar across multiple pages**.  
+✅ Ensure the **Navbar is responsive** on all screen sizes.  
+
+### Steps for Milestone 15 📝  
+
+#### 1️⃣ Create a New Navbar Component  
+- Design a **Navbar** with links to:  
+  - 🏠 **Home**  
+  - 📦 **My Products**  
+  - ➕ **Add Product**  
+  - 🛒 **Cart**  
+
+#### 2️⃣ Make the Navbar Responsive  
+- Ensure the **Navbar adapts to all screen sizes**, including mobile and desktop views.  
+
+#### 3️⃣ Add the Navbar to All Pages  
+- Integrate the Navbar **into every screen** of the application.  
+- Ensure smooth navigation between pages.  
+
+### Why This Matters?  
+This milestone helps you understand **how to build and reuse UI components**, making navigation **seamless** across your application.  
+
+Now, let’s **build a user-friendly Navbar!**
+
+---
+
+## Milestone 16 Overview  
+
+In this milestone, we will **create a Product Info page** that displays detailed product information. Users will be able to **select the quantity** and add the product to the **cart**.  
+
+### Learning Goals 🎯  
+By the end of this milestone, you will:  
+✅ Learn how to **create a new page to display each product's details**.  
+✅ Understand how to **add a quantity selector** and an **Add to Cart button**.  
+
+### Steps for Milestone 16 📝  
+
+#### 1️⃣ Create a New Product Info Page  
+- Display **detailed product information**, including:  
+  - 📌 **Product Name**  
+  - 🖼 **Image**  
+  - 📝 **Description**  
+  - 💰 **Price**  
+
+#### 2️⃣ Add a Quantity Selector  
+- Allow users to **choose the quantity** before adding the product to the cart.  
+
+#### 3️⃣ Add an "Add to Cart" Button  
+- Enable users to **add the selected quantity** of the product to the **cart**.  
+
+### Why This Matters?  
+This milestone helps you understand **how to create individual product pages** and implement **e-commerce functionality** like adding items to a cart.  
+
+Now, let’s **bring the Product Info page to life!**
