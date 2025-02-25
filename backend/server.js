@@ -1,35 +1,28 @@
-const userrouter = require('./controller/user');
-const express = require('express');
-const cors = require('cors');
-const multer = require('multer');
-const mongoose = require('mongoose'); // Add Mongoose for MongoDB connection
-const app = express();
-const port = 8000;
-const product = require("./controller/product");
-const user = require("./controller/user");
-const path =require('path');
+const app = require("./app");
+const connectDatabase = require("./db/Database");
 
-app.use(cors());
-app.use("/api/v2/user", user);
-app.use("/api/v2/product", product);
-app.use('/products',express.static(path.join(__dirname, 'products')));
+process.on("uncaughtException", (err)=>{
+    console.log(`Error : ${err.message}`);
+    console.log(`shutting down the server for handling uncaught exception`);
+});
 
-// Enable CORS if needed (if frontend and backend are on different ports)
-// Body parsing middleware for form data
-app.use(express.json());  // For JSON data
-app.use(express.urlencoded({ extended: true }));  // For form-encoded data
-app.use(userrouter); // For
-// File upload setup using multer
-const upload = multer({ dest: 'uploads/' });
+if(process.env.NODE_ENV !=="PRODUCTION"){
+    require("dotenv").config({
+        path: "./config/.env",
+    })
+}
 
-// Connect to MongoDB
-const mongoURI = 'mongodb+srv://heramb:inamke@cluster0.wycsh.mongodb.net/test?retryWrites=true&w=majority&tls=true'; // Replace with your MongoDB URI
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("✅Database connection successful"))
-  .catch((err) => console.error("❌Database connection error:", err));
+connectDatabase();
 
+const server = app.listen(process.env.PORT, () => {
+    console.log(
+        `Server is running on https://localhost:${process.env.PORT}`
+        );
+});
 
-// Start server
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+console.log("Registered routes:");
+app._router.stack.forEach((r) => {
+    if (r.route && r.route.path) {
+        console.log(r.route.path);
+    }
 });
