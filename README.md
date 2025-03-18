@@ -515,3 +515,137 @@ By the end of this milestone, you will:
 This milestone helps you understand **how to create individual product pages** and implement **e-commerce functionality** like adding items to a cart.  
 
 Now, let’s **bring the Product Info page to life!**
+
+
+**Milestone 17 Overview**  
+
+In this milestone, we will implement a backend endpoint to add products to the cart and store them in the database. This will allow users to save items to their cart for future purchases.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Modify the User Schema**: Update the database schema to store cart products.  
+- **Create an API Endpoint**: Develop a backend route to receive product details and save them in the cart.  
+
+### Steps for Milestone 17 📝  
+
+1. **Define the Cart Schema**  
+   - Modify or create a schema to store cart items associated with each user.  
+
+2. **Create an API Endpoint to Add Products to Cart**  
+   - Write backend logic to receive product details and store them in the database.  
+
+By the end of this milestone, users will be able to add products to their cart, enhancing the shopping experience. 🛒🚀
+
+**Milestone 18 Overview**  
+
+In this milestone, we will implement a backend endpoint to handle the cart functionality. The goal is to retrieve all the products in a user’s cart and display them on the cart page. This will allow seamless communication between the frontend and backend, ensuring users can view their selected items efficiently.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Create an API Endpoint**: Build a backend route to handle requests from the cart page.  
+- **Fetch Cart Products**: Retrieve all products in a user's cart using their email.  
+
+### Steps for Milestone 18 📝  
+
+1. **Set Up a Backend Endpoint for the Cart Page**  
+   - Create a route to handle incoming requests from the cart page.  
+
+2. **Fetch Cart Products for the User**  
+   - Write backend logic to retrieve all products stored in the user's cart using their email.  
+
+By completing this milestone, you’ll have a functional cart API that enables users to view their cart items dynamically. 🚀
+
+**Milestone 19 Overview**  
+
+In this milestone, we will build the frontend UI for the cart page and implement functionality to update product quantities. This includes adding buttons to increase or decrease the quantity of items in the cart and creating a backend endpoint to handle these updates.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Create a Cart Page UI**: Display the products inside the cart using the backend endpoint from Milestone 18.  
+- **Implement Quantity Controls**: Add `+` and `-` buttons to adjust the quantity of each product in the cart.  
+- **Develop an API Endpoint**: Write a backend route to update the quantity of products in the cart.  
+
+### Steps for Milestone 19 📝  
+
+1. **Build the Cart Page UI**  
+   - Display all cart products retrieved from the backend.  
+
+2. **Add Quantity Controls for Each Product**  
+   - Implement `+` and `-` buttons to modify product quantity.  
+
+3. **Create a Backend Endpoint for Quantity Updates**  
+   - Write API logic to handle increasing and decreasing product quantities in the cart.  
+
+By completing this milestone, you will gain a clear understanding of how to implement cart functionality in an eCommerce application. 🛒🚀
+
+**Milestone 20 Overview**  
+
+In this milestone, we will build the profile page UI and create a backend endpoint to fetch and display user data. The profile page will include personal details like the profile photo, name, email, and addresses, allowing users to manage their information easily.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Create a Backend Endpoint**: Develop an API to fetch user data using their email.  
+- **Build a Profile Page UI**: Display user details such as profile photo, name, email, and addresses.  
+- **Implement Address Management**: Show stored addresses and provide an option to add new ones.  
+
+### Steps for Milestone 20 📝  
+
+1. **Create a Backend Endpoint for User Data**  
+   - Develop an API that retrieves user details from the database using their email.  
+
+2. **Build the Profile Page UI**  
+   - Display **profile photo, name, and email** in one section.  
+
+3. **Implement Address Display & Management**  
+   - Show saved addresses in a separate section.  
+   - Add a button labeled **"Add Address"** to let users add new addresses.  
+   - If no address is found, display **"No address found."**  
+
+By completing this milestone, you will gain hands-on experience in creating and managing user profile pages in a full-stack application. 🚀
+
+**Milestone 21 Overview**  
+
+In this milestone, we will build a frontend form for users to input their address details. This form will collect essential address information and be accessible from the profile page when the "Add Address" button is clicked.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Create an Address Input Form**: Develop a frontend form to collect user addresses.  
+- **Manage Address Data**: Store input values in a state for submission.  
+- **Enable Navigation from Profile Page**: Redirect users to the address form when they click "Add Address."  
+
+### Steps for Milestone 21 📝  
+
+1. **Create an Address Form Page**  
+   - Design a form to take user inputs:  
+     - **Country**  
+     - **City**  
+     - **Address Line 1**  
+     - **Address Line 2**  
+     - **Zip Code**  
+     - **Address Type**  
+
+2. **Manage Form State**  
+   - Store the entered address details in the component’s state.  
+
+3. **Enable Navigation from the Profile Page**  
+   - When users click "Add Address" in their profile, navigate them to this form page.  
+
+By completing this milestone, you will understand how to implement and manage user address input in a frontend application. 🏠🚀
+
+Welcome to Milestone 22! 🌟
+
+Today, we will create an backend endpoint that will save the address inside user profile in database.
+
+Learning Goals 🎯
+By the end of this milestone, you will:
+
+Create an backend endpoint that will store the address inside user profile in database.
+Steps for Milestone 22📝
+You need to create an endpoint that will receive the address from address form in frontend
+Add the address to the address array inside user collection.
+This lesson will help you in understanding how to create an endpoint that will store the address.
