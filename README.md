@@ -649,3 +649,60 @@ Steps for Milestone 22📝
 You need to create an endpoint that will receive the address from address form in frontend
 Add the address to the address array inside user collection.
 This lesson will help you in understanding how to create an endpoint that will store the address.
+
+**Milestone 23 Overview**  
+
+In this milestone, we will implement the **Place Order** functionality by creating a **Select Address** page in the frontend and defining the **Order Schema** in the backend. This will allow users to choose a delivery address before placing an order.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Add a "Place Order" Button**: Insert a button inside the cart page to initiate the checkout process.  
+- **Create a Select Address Page**: Display all saved addresses and allow users to choose one for delivery.  
+- **Define an Order Schema**: Write a Mongoose schema to store order details in the database.  
+
+### Steps for Milestone 23 📝  
+
+1. **Add a "Place Order" Button to the Cart Page**  
+   - When clicked, navigate to the **Select Address** page.  
+
+2. **Build the Select Address Page**  
+   - Display all available addresses.  
+   - Provide an option to select one delivery address.  
+
+3. **Create a Backend Endpoint for Address Retrieval**  
+   - Develop an API that fetches and returns all saved addresses for the user.  
+
+4. **Write the Order Schema in Mongoose**  
+   - Define a schema to store order details, including selected address, products, and user information.  
+
+By completing this milestone, you will understand how to implement the **Place Order** functionality in an eCommerce application. 🛒🚀
+
+**Milestone 24 Overview**  
+
+In this milestone, we will create an **Order Confirmation Page** in the frontend. This page will display a summary of the order, including the products being purchased, the selected delivery address, and the total price. It will also include a **"Place Order"** button to finalize the purchase.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Build an Order Confirmation Page**: Show the order summary before placing an order.  
+- **Display Ordered Products**: List all items being purchased.  
+- **Show Selected Delivery Address**: Display the user’s chosen address.  
+- **Calculate & Show Total Price**: Provide a breakdown of the cart total.  
+- **Add a Final "Place Order" Button**: Allow users to confirm their order.  
+
+### Steps for Milestone 24 📝  
+
+1. **Display the Ordered Products**  
+   - Show a list of all products being purchased.  
+
+2. **Show the Selected Delivery Address**  
+   - Display the address the user chose in **Milestone 23**.  
+
+3. **Display the Total Cart Value**  
+   - Calculate and show the total price of all items in the order.  
+
+4. **Add a "Place Order" Button**  
+   - Clicking this button will finalize the order.  
+
+By completing this milestone, you will understand how to implement an **Order Confirmation** page in an eCommerce application. 🛒🚀
