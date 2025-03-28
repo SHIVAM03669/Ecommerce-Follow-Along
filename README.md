@@ -731,3 +731,83 @@ By the end of this milestone, you will:
    - Use the **Order Schema** (created earlier) to structure order data in the MongoDB collection.  
 
 By completing this milestone, you will understand how to build a **backend order placement system** in an eCommerce application. 🛍️🚀
+
+**Milestone 26 Overview**  
+
+In this milestone, we will develop a **backend endpoint** to fetch all orders placed by a specific user. This endpoint will retrieve the user's orders from the database and return them as a response.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Create a Backend Endpoint**: Develop an API to retrieve all orders for a user.  
+- **Fetch User ID Using Email**: Use the user’s email to get their `_id`.  
+- **Retrieve and Return All Orders**: Fetch all orders associated with the user and send them in the response.  
+
+### Steps for Milestone 26 📝  
+
+1. **Create an Order Retrieval Endpoint**  
+   - The API should accept the user’s email as a request parameter.  
+
+2. **Find the User’s ID from Email**  
+   - Retrieve the `_id` of the user from the database using their email.  
+
+3. **Fetch All Orders for the User**  
+   - Query the database to get all orders associated with the user's `_id`.  
+   - Return the list of orders in the API response.  
+
+By completing this milestone, you will learn how to implement an **order retrieval system** for users in an eCommerce application. 📦🚀
+
+**Milestone 27 Overview**  
+
+In this milestone, we will create a **frontend page** to display all orders placed by the user. This page will fetch order data from the backend and present it in an organized format.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Build a "My Orders" Page**: Display all orders placed by the user.  
+- **Fetch Orders from the Backend**: Send a GET request to the `/my-orders` endpoint.  
+- **Pass User Email to the Endpoint**: Retrieve orders based on the user’s email.  
+- **Display Order Details**: Show relevant order information on the page.  
+- **Add Navigation Link**: Include "My Orders" in the navbar for easy access.  
+
+### Steps for Milestone 27 📝  
+
+1. **Create a "My Orders" Page**  
+   - Design a new page to display the user’s past orders.  
+
+2. **Fetch Orders from the Backend**  
+   - Make a GET request to the `/my-orders` endpoint (created in Milestone 26).  
+   - Pass the user’s email as a query parameter.  
+
+3. **Display Orders on the Page**  
+   - Show order details, such as product name, quantity, total price, and order status.  
+
+4. **Add "My Orders" to the Navbar**  
+   - Ensure easy navigation by adding a **My Orders** link in the navbar.  
+
+By completing this milestone, you will understand how to fetch and display **user order history** in an eCommerce application. 📦🛒🚀
+
+**Milestone 28 Overview**  
+
+In this milestone, we will enhance the **My Orders** page by adding a **Cancel Order** button for each active order. Additionally, we will create a **backend endpoint** to process order cancellations.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Enable Users to Cancel Orders**: Add a cancel button for each order.  
+- **Hide the Cancel Button for Canceled Orders**: Ensure the button appears only for active orders.  
+- **Create a Backend Endpoint**: Handle order cancellations in the database.  
+
+### Steps for Milestone 28 📝  
+
+1. **Add a Cancel Order Button in My Orders Page**  
+   - Display a **Cancel Order** button next to each active order.  
+   - If an order is already canceled, **hide the button**.  
+
+2. **Create a Backend Endpoint for Order Cancellation**  
+   - The endpoint should receive the **order ID** from the frontend.  
+   - Retrieve the order using the **order ID** from the database.  
+   - Update the order status to **"Canceled"** and save the changes.  
+
+By completing this milestone, you will understand how to implement **order cancellation functionality** in an eCommerce application. 🚀🛒❌
+
