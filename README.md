@@ -706,3 +706,28 @@ By the end of this milestone, you will:
    - Clicking this button will finalize the order.  
 
 By completing this milestone, you will understand how to implement an **Order Confirmation** page in an eCommerce application. 🛒🚀
+
+**Milestone 25 Overview**  
+
+In this milestone, we will develop a **backend endpoint** to handle order placement. This endpoint will process the order details, associate them with the user, and store them in the database.  
+
+### Learning Goals 🎯  
+
+By the end of this milestone, you will:  
+- **Create a Backend Endpoint**: Develop an API to handle order placement.  
+- **Retrieve User Information**: Use the user’s email to get their unique `_id`.  
+- **Store Order Data**: Save each product as a separate order with the same delivery address.  
+
+### Steps for Milestone 25 📝  
+
+1. **Create an Order Placement Endpoint**  
+   - Receive product details, user information, and the selected address.  
+
+2. **Retrieve User ID from Email**  
+   - Extract the user’s `_id` from the database using their email.  
+
+3. **Store Orders in MongoDB**  
+   - Save each product as a separate order but with the same address.  
+   - Use the **Order Schema** (created earlier) to structure order data in the MongoDB collection.  
+
+By completing this milestone, you will understand how to build a **backend order placement system** in an eCommerce application. 🛍️🚀
