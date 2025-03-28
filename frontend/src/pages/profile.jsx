@@ -1,50 +1,51 @@
-import {useEffect, useState} from "react";
-import Navbar from "../components/nav.jsx";
-import AddressCard from "../components/addressCard.jsx";
+import React, {useEffect, useState} from "react";
+import Nav from "../components/nav.jsx";
 import { useNavigate } from "react-router-dom";
+import AddressCard from "../components/AddressCard.jsx";
 
 export default function Profile() {
-    const navigate = useNavigate();
     const [personalDetails, setPersonalDetails] = useState({
         name: "",
-        email: "",
+        email:"",
         phoneNumber: "",
-        avatarUrl: "",
     });
 
-    const [address, setAddress] = useState([]);
+    const [addresses, setAddresses] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v2/user/profile?email=${'dummy@gmail.com'}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
+        fetch(
+            `http://localhost:8000/api/v2/user/profile?email=${"dips@gmail.com"}`,
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type" : "application/json",
+                },
             }
+        )
+        .then((res) => {
+            if(!res.ok) {
+                throw new Error(`HTTP error! status: ${res.status}`);
+            }
+            return res.json();
         })
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error('HTTP ERROR');
-                }
-                return res.json();
-            })
-            .then((data) => {
-                setPersonalDetails(data.user);
-                setAddress(data.addresses || []);
-            })
-            .catch((error) => {
-                console.error("Error fetching profile:", error);
-            });
-    }, []); // Added dependency array to prevent infinite loop
+        .then((data) => {
+            setPersonalDetails(data.user);
+            setAddresses(data.addresses);
+            console.log("User fetched:",data.user);
+            console.log("Addresses fetched:",data.addresses);
+        });
+    }, []);
 
-    const avatarUrl = personalDetails.avatarUrl
-        ? `http://localhost:8000${personalDetails.avatarUrl}`
-        : 'https://via.placeholder.com/150';
+    const handleAddAddress = () => {
+        navigate("/create-address");
+    }
 
     return (
         <>
-            <Navbar/>
-            <div className="w-full min-h-screen bg-neutral-800 p-5">
-                <div className="w-full h-full bg-neutral-700 rounded-lg">
+        <Nav />
+            <div className="w-full min-h-screen bg-blue-600 p-5">
+                <div className="w-full h-full bg-yellow-400 rounded-lg">
                     <div className="w-full h-max my-2 p-5">
                         <div className="w-full h-max">
                             <h1 className="text-3xl text-neutral-100">
@@ -56,15 +57,17 @@ export default function Profile() {
                                 <div className="w-full h-max text-2xl text-neutral-100 text-left">
                                     PICTURE
                                 </div>
-                                <img
-                                    src={avatarUrl}
-                                    alt="profile"
-                                    className="w-40 h-40 rounded-full object-cover"
-                                    onError={(e) => {
-                                        e.target.onerror = null;
-                                        e.target.src = 'https://via.placeholder.com/150';
-                                    }}
-                                />
+                        <img
+                            src={personalDetails.avatarUrl 
+                            ? `http://localhost:8000/${personalDetails.avatarUrl}`
+                            : `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`}
+                            alt="profile"
+                            className="w-40 h-40 rounded-full"
+                            onError={(e) => {
+                            e.target.onerror = null; // Prevent infinite loop if fallback image fails
+                            e.target.src = `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`;
+                            }}
+                        />
                             </div>
                             <div className="h-max md:flex-grow">
                                 <div className="w-full h-max flex flex-col justify-center items-center gap-y-3">
@@ -73,7 +76,7 @@ export default function Profile() {
                                             NAME
                                         </div>
                                         <div className="text-lg font-light text-neutral-100 text-left break-all">
-                                            {personalDetails.name || 'Not provided'}
+                                            {personalDetails.name}
                                         </div>
                                     </div>
                                     <div className="w-full h-max">
@@ -81,7 +84,7 @@ export default function Profile() {
                                             EMAIL
                                         </div>
                                         <div className="text-lg font-light text-neutral-100 text-left break-all">
-                                            {personalDetails.email || 'Not provided'}
+                                            {personalDetails.email}
                                         </div>
                                     </div>
                                     <div className="w-full h-max">
@@ -89,38 +92,39 @@ export default function Profile() {
                                             MOBILE
                                         </div>
                                         <div className="text-lg font-light text-neutral-100 text-left break-all">
-                                            {personalDetails.phoneNumber || 'Not provided'}
+                                            {personalDetails.phoneNumber}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-max my-2 p-5">
+                        <div className="w-full h-max my-2 p-5">
                         <div className="w-full h-max">
                             <h1 className="text-3xl text-neutral-100">
                                 Addresses
                             </h1>
                         </div>
                         <div className="w-full h-max p-5">
-                            <button onClick={() => navigate('/create-address')} className="w-max px-3 py-2 bg-neutral-600 text-neutral-100 rounded-md text-center hover:bg-neutral-100 hover:text-black transition-all duration-100">
+                            <button className="w-max px-3 py-2 bg-purple-600 text-neutral-100 rounded-md text-center hover:bg-neutral-100 hover:text-black transition-all duration-100"
+                            onClick={handleAddAddress}>
                                 Add Address
                             </button>
                         </div>
                         <div className="w-full h-max flex flex-col gap-5 p-5">
-                            {address.length === 0 ? (
+                            {addresses.length === 0 ? (
                                 <div className="w-full h-max text-neutral-100 font-light text-left">
                                     No Addresses Found
                                 </div>
-                            ) : (
-                                address.map((addr, index) => (
-                                    <AddressCard key={index} {...addr}/>
-                                ))
-                            )}
+                            ) : null}
+                            {addresses.map((address, index) => (
+                                <AddressCard key={index} {...address} />
+                            ))}
                         </div>
                     </div>
                 </div>
             </div>
+
         </>
-    );
+    )
 }
