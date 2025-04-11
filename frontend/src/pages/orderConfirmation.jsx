@@ -219,7 +219,7 @@ const OrderConfirmation = () => {
                             <div className='mt-4' style={{ maxWidth: '500px' }}>
                                 <PayPalScriptProvider
                                     options={{
-                                        'client-id': 'AfdCPjZMCJCv503ZQ6HUyfmpo9fek2nuRLwkhU0CL4Kc-qmoZ1RVtytvI8qe_tQC8iPALE2WkPFHdKdN', 
+                                        'client-id': 'AQsEUMWSa9gfSeCEzRcQctidWOhNBZcT3Ixluh2QSnzW2BPMu0Z2StPe0zJFJtKRIYQdslL2EVQpCbMD', 
                                     }}
                                 >
                                     <PayPalButtons
