@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import { setemail } from "@/store/userAction";
 
+axios.defaults.withCredentials = true;
+
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,7 +22,7 @@ function Login() {
       event.preventDefault();
 
       try {
-        const response = await axios.post("http://localhost:8000/api/v2/user/login-user", {
+        const response = await axios.post("/api/v2/user/login-user", {
           email,
           password
         });

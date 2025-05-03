@@ -2,7 +2,6 @@ const User = require("../model/user");
 const express = require("express");
 const path = require("path")
 const fs = require("fs");
-
 const router = express.Router();
 const {upload} = require("../multer");
 const ErrorHandler = require("../utils/ErrorHandler");
@@ -13,6 +12,7 @@ const { default: mongoose } = require("mongoose");
 const { type } = require("os");
 const { count } = require("console");
 require("dotenv").config();
+const {isAuthenticatedUser} = require('../middleware/auth');
 
 // create user
 router.post("/create-user", upload.single("file"), catchAsyncErrors( async (req, res, next) => {
@@ -80,6 +80,27 @@ router.post("/login-user", catchAsyncErrors(async(req, res, next) =>{
         return next(new ErrorHandler("Authentication failed , Invalid password.", 401));
     }
 
+    //Generate JWT Token
+
+    const token = jwt.sign(
+        {id: user_authen._id, email: user_authen.email},
+        process.env.JWT_SECRET,
+        {expiresIn: "1h"}
+    );
+
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "Strict",
+        maxAge: 3600000, //1 hour
+    });
+
+    user_authen.password = undefined;
+    res.status(200).json ({
+        success: true,
+        user_authen,
+    });
+
     res.status(200).json({
         success : true ,
         message : "Login successfully.",
@@ -91,7 +112,7 @@ router.post("/login-user", catchAsyncErrors(async(req, res, next) =>{
         });
 }));
 
-router.get("/Profile", catchAsyncErrors(async(req,res,next) => {
+router.get("/Profile", isAuthenticatedUser, catchAsyncErrors(async(req,res,next) => {
     const {email} = req.query;
 
     if(!email) {
@@ -115,7 +136,7 @@ router.get("/Profile", catchAsyncErrors(async(req,res,next) => {
     });
 }))
 
-router.post("/add-address", catchAsyncErrors(async (req,res,next) => {
+router.post("/add-address", isAuthenticatedUser, catchAsyncErrors(async (req,res,next) => {
 
     console.log("Received address data:", req.body);
     const {country, city, address1, address2, zipCode, addressType, email} = req.body;
@@ -144,7 +165,7 @@ router.post("/add-address", catchAsyncErrors(async (req,res,next) => {
     });
 }))
 
-router.get("/addresses", catchAsyncErrors(async(req, res, next) => {
+router.get("/addresses", isAuthenticatedUser, catchAsyncErrors(async(req, res, next) => {
     console.log("Fetching addresses for:", req.query.email);
 
     const {email} = req.query;
