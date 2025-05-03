@@ -907,3 +907,49 @@ The value of a centralized state for a seamless user experience
 🎉 Mission Accomplished!
 With Milestone 32 completed, I’ve added another powerful tool to my React toolkit. Managing global state with Redux? ✅ Done and dusted!
 
+🌟 Milestone 33: Creating and Storing JWT in Cookies
+🎯 Learning Goals
+By the end of this milestone, I learned how to:
+
+Generate a JWT (JSON Web Token) using the jsonwebtoken package.
+Store the JWT securely inside a cookie.
+Set an expiration time using the maxAge option.
+Send the cookie in the HTTP response to be stored in the browser.
+📝 Steps Followed
+Installed jsonwebtoken
+
+Created a JWT Token
+
+Set Expiration Time
+
+Stored the Token in Cookie
+
+✅ With this milestone, I now understand how authentication systems can securely manage user sessions using JWTs and cookies.
+
+Milestone 34: Validating JWT Tokens from Cookies
+🛡️ JWT Token Validation for Protected Routes
+
+🌟 Overview
+
+This milestone focuses on securing your application by validating the JWT tokens stored in cookies. You’ll ensure only authenticated users can access certain pages, forming the backbone of protected routes and user-based access control.
+
+✨ Features
+
+🍪 Extract JWT token from the browser cookie.
+🔍 Send the token to the backend for validation.
+✅ Middleware checks token authenticity and validity.
+🚫 Prevents access to routes without proper authentication.
+
+📝 Implementation Steps
+
+🔍 Get Token from Cookie
+
+📨 Send Token to Backend
+
+🧠 Create JWT Middleware
+
+🚫 Redirect Unauthorized Users
+If token verification fails, redirect the user to the login page or return a 401 Unauthorized response.
+
+🚀 Next Steps
+With token validation in place, you’re now ready to implement full session management and user-specific pages with robust access control.
